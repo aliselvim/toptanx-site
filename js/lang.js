@@ -24,7 +24,7 @@ const translations = {
     // Ürünler
     featured_title: "Öne Çıkan Ürünler",
     product_btn: "Detayları Gör",
-    product1_title: "Cüzdan Model 1",
+    product1_title: "Mor telefon bölmeli cüzdan",
     product1_desc: "Rahat bölmeli, kaliteli malzeme",
     product2_title: "Kahverengi Çapraz Çanta",
     product2_desc: "Şık ve taşınabilir günlük çanta",
@@ -75,10 +75,13 @@ const translations = {
     // Ürünler
     featured_title: "Featured Products",
     product_btn: "View Details",
-    product1_title: "Wallet Model 1",
+
+    product1_title: "Purple wallet with phone pocket",
     product1_desc: "Comfortable compartments, quality material",
+
     product2_title: "Brown Crossbody Bag",
     product2_desc: "Elegant and portable daily bag",
+
     product3_title: "Red Wallet",
     product3_desc: "Phone slot, elegant design",
 
