@@ -1,0 +1,111 @@
+/* Genel Ayarlar */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Navbar markası (site adı) */
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Banner */
+.bg-light.p-5 {
+  background: linear-gradient(45deg, #0d6efd, #0a58ca);
+  color: white;
+}
+
+/* Ürün kartları */
+.card {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* WhatsApp butonu */
+.btn-success {
+  background-color: #25d366;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #1ebe57;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+}
+
+/* Sepet tablosu stilleri */
+#cart-container table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+#cart-container table thead {
+  background-color: #f8f9fa;
+}
+
+#cart-container table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Sepet içi butonlar */
+#cart-container .btn-outline-secondary,
+#cart-container .btn-outline-danger {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Ürün resmi hizalama */
+#cart-container td img {
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+
+.product-image-hover {
+  position: relative;
+}
+.product-image-hover a {
+  display: block;
+}
+.product-image-hover .second-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+.product-image-hover:hover .second-img {
+  opacity: 1;
+}
+.product-image-hover:hover .first-img {
+  opacity: 0;
+}
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+.rating i {
+  font-size: 1rem;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+#productGridCarousel img {
+  max-height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
