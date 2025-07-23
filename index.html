@@ -3,68 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="site_title">Toptan Satış Mağazası</title>
+  <title>Toptan Satış Mağazası</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToptanX</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_32x32.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">  
 </head>
 <body>
 
 <!-- Üst Bilgi Çubuğu -->
-<div class="bg-light text-dark small py-1 px-3 d-flex justify-content-between">
-  <span><i class="bi bi-telephone"></i> Yardım mı lazım? +90 5xx xxx xx xx</span>
-  <span><i class="bi bi-shield-check"></i> 30 gün iade garantisi</span>
+<div class="text-white text-center py-2 px-3 small fw-semibold" style="background-color: #b83c1d;">
+  %100 Deride Özel Kampanyalar <strong>ToptanX</strong>'te!
 </div>
 
 <!-- Logo + Arama + İkonlar Alanı -->
 <div class="bg-white py-3 border-bottom">
   <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
-    <a class="navbar-brand fs-4 fw-bold text-dark" href="index.html">ToptanX</a>
-    <form class="d-flex flex-grow-1 mx-4" role="search" onsubmit="event.preventDefault();">
-      <input id="searchInput" class="form-control rounded-start-pill border" type="search" placeholder="Ürün ara..." aria-label="Ara">
-      <button class="btn btn-primary rounded-end-pill px-4" type="submit">
-        <i class="bi bi-search"></i>
-      </button>
-    </form>
-    <div class="d-flex gap-3 fs-5">
-      <a href="account.html"><i class="bi bi-person"></i></a>
-      <a href="favorites.html"><i class="bi bi-heart"></i></a>
-      <a href="cart.html" class="position-relative">
+    
+    <!-- Logo -->
+    <a class="navbar-brand fs-4 fw-bold text-dark" href="index.html">
+      <img src="img/toptanx_logo_hd.png" alt="ToptanX Logo" height="60">
+    </a>
+
+    <!-- Arama ve üst menü -->
+    <div class="d-flex flex-grow-1 mx-4 align-items-center justify-content-between">
+
+      <!-- Arama Kutusu -->
+      <form class="d-flex flex-grow-1 me-4" role="search" onsubmit="event.preventDefault();">
+        <input id="searchInput" class="form-control rounded-start-pill border" type="search" placeholder="Ürün ara..." aria-label="Ara">
+        <button class="btn btn-primary rounded-end-pill px-4" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+
+      <!-- Teslimat Adresi -->
+      <div class="d-flex align-items-center gap-2 me-4">
+        <i class="bi bi-geo-alt fs-5 text-primary"></i>
+        <div class="d-flex flex-column">
+          <span class="text-secondary fw-semibold" style="font-size: 11px;">TESLİMAT ADRESİ</span>
+          <a href="account.html" class="text-primary text-decoration-underline" style="font-size: 11px;">Adres Ekle</a>
+        </div>
+      </div>
+
+      <!-- Hesap -->
+      <div class="d-flex align-items-center gap-2 me-4">
+        <i class="bi bi-person fs-3 text-primary"></i>
+        <div class="d-flex flex-column">
+          <span class="text-secondary fw-semibold" style="font-size: 11px;">HESABIM</span>
+          <div style="font-size: 11px;">
+            <a href="account.html" class="text-primary text-decoration-underline me-1">Üye Ol</a>
+            <a href="account.html" class="text-primary text-decoration-underline">Giriş Yap</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Favoriler -->
+      <a href="favorites.html" class="text-primary fs-5 me-3">
+        <i class="bi bi-heart"></i>
+      </a>
+
+      <!-- Sepet -->
+      <a href="cart.html" class="position-relative text-primary fs-5">
         <i class="bi bi-cart"></i>
         <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
       </a>
-    </div>
 
-    <!-- 🔽 Buraya dil seçici ekle -->
-    <div class="dropdown">
-      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        🌐 Dil
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item lang-select" href="#" data-lang="tr">🇹🇷 Türkçe</a></li>
-        <li><a class="dropdown-item lang-select" href="#" data-lang="en">🇬🇧 English</a></li>
-      </ul>
-    </div>    
+    </div>
   </div>
 </div>
 
-<!-- Yeni Menü (Sade Navbar) -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="nav_home">Ana Sayfa</a></li>
-        <li class="nav-item"><a class="nav-link" href="#urunler" data-i18n="nav_products">Ürünler</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html" data-i18n="nav_cart">Sepet</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">İletişim</a></li>
+
+<!-- Kategori Menü -->
+<div class="bg-white py-3 border-top border-bottom">
+  <div class="container d-flex justify-content-center gap-4 flex-wrap">
+
+    <!-- Ayakkabı -->
+    <div class="text-center">
+      <a href="#" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+        <img src="img/ayakkabı_96x96.png" width="96" height="96" alt="Ayakkabı">
+        <small class="fw-semibold mt-1">Ayakkabı</small>
+      </a>
+    </div>
+
+    <!-- Çanta (Dropdown Resimli) -->
+    <div class="dropdown text-center">
+      <a href="#" class="dropdown-toggle text-decoration-none text-dark d-flex flex-column align-items-center" data-bs-toggle="dropdown">
+        <img src="img/çanta_96x96.png" width="96" height="96" alt="Çanta">
+        <small class="fw-semibold mt-1">Çanta</small>
+      </a>
+      <ul class="dropdown-menu px-3" style="min-width: 240px;">
+        <li class="mb-2">
+          <a href="product2.html" class="d-block text-decoration-none">
+            <img src="img/urun4.png" alt="Model 4" style="width: 96px; height: 96px;" class="img-thumbnail">
+          </a>
+        </li>
+        <li class="mb-2">
+          <a href="product2.html" class="d-block text-decoration-none">
+            <img src="img/urun5.png" alt="Model 5" style="width: 96px; height: 96px;" class="img-thumbnail">
+          </a>
+        </li>
+        <li>
+          <a href="product2.html" class="d-block text-decoration-none">
+            <img src="img/urun6.png" alt="Model 6" style="width: 96px; height: 96px;" class="img-thumbnail">
+          </a>
+        </li>
       </ul>
     </div>
+
+    <!-- Cüzdan (Dropdown Resimli) -->
+    <div class="dropdown text-center">
+      <a href="#" class="dropdown-toggle text-decoration-none text-dark d-flex flex-column align-items-center" data-bs-toggle="dropdown">
+        <img src="img/cüzdan_96x96.png" width="96" height="96" alt="Cüzdan">
+        <small class="fw-semibold mt-1">Cüzdan</small>
+      </a>
+      <ul class="dropdown-menu px-3" style="min-width: 240px;">
+        <li class="mb-2">
+          <a href="product1.html" class="d-block text-decoration-none">
+            <img src="img/urun1.png" alt="Model 1" style="width: 96px; height: 96px;" class="img-thumbnail">
+          </a>
+        </li>
+        <li class="mb-2">
+          <a href="product3.html" class="d-block text-decoration-none">
+            <img src="img/urun8.png" alt="Model 2" style="width: 96px; height: 96px;" class="img-thumbnail">
+          </a>
+        </li>
+        <li>
+          <a href="product3.html" class="d-block text-decoration-none">
+            <img src="img/urun9.png" alt="Model 3" style="width: 96px; height: 96px;" class="img-thumbnail">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Kemer -->
+    <div class="text-center">
+      <a href="#" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+        <img src="img/kemer_96x96.png" width="96" height="96" alt="Kemer">
+        <small class="fw-semibold mt-1">Kemer</small>
+      </a>
+    </div>
+
+    <!-- Aksesuar -->
+    <div class="text-center">
+      <a href="#" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+        <img src="img/aksesuar_96x96.png" width="96" height="96" alt="Aksesuar">
+        <small class="fw-semibold mt-1">Aksesuar</small>
+      </a>
+    </div>
+
   </div>
-</nav>
+</div>
+
+
 
 
 <!-- Ürün Carousel Grid (6 ürün küçük slider) -->
@@ -130,37 +228,19 @@
 
 <!-- Banner -->
 <div class="bg-light p-5 text-center">
-  <h1 class="display-5 fw-bold" data-i18n="hero_title">Toptan Alışverişin Yeni Adresi</h1>
-  <p class="lead" data-i18n="hero_sub">Ucuz fiyat, kaliteli ürün, hızlı iletişim</p>
-  <a href="#urunler" class="btn btn-primary" data-i18n="hero_btn">Ürünlere Göz At</a>
+  <h1 class="display-5 fw-bold">Toptan Alışverişin Yeni Adresi</h1>
+  <p class="lead">Ucuz fiyat, kaliteli ürün, hızlı iletişim</p>
+  <a href="#urunler" class="btn btn-primary">Ürünlere Göz At</a>
 </div>
 
 <!-- Kategoriler -->
-<section class="py-4 bg-white text-center">
-  <div class="container">
-    <h2 class="mb-4" data-i18n="categories_title">Kategoriler</h2>
-    <div class="row">
-      <div class="col-6 col-md-3 mb-3">
-        <div class="p-3 border" data-i18n="category_ev">Ev Eşyası</div>
-      </div>
-      <div class="col-6 col-md-3 mb-3">
-        <div class="p-3 border" data-i18n="category_mutfak">Mutfak Gereçleri</div>
-      </div>
-      <div class="col-6 col-md-3 mb-3">
-        <div class="p-3 border" data-i18n="category_plastik">Plastik Ürünler</div>
-      </div>
-      <div class="col-6 col-md-3 mb-3">
-        <div class="p-3 border" data-i18n="category_elektronik">Elektronik</div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <!-- Ürünler -->
 <section class="py-5 bg-light" id="urunler">
   <div class="container">
-    <h2 class="text-center mb-4" data-i18n="featured_title">Ürünler</h2>
+    <h2 class="text-center mb-4">Ürünler</h2>
     <div class="row g-4">
 
       <!-- Ürün 1 -->
@@ -173,8 +253,8 @@
             </div>
           </a>
           <div class="card-body text-center">
-            <h5 class="card-title" data-i18n="product1_title">Mor telefon bölmeli cüzdan</h5>
-            <p class="card-text" data-i18n="product1_desc">Rahat bölmeli, kaliteli malzeme</p>
+            <h5 class="card-title">Mor telefon bölmeli cüzdan</h5>
+            <p class="card-text">Rahat bölmeli, kaliteli malzeme</p>
             <p class="text-primary fw-bold">129.99₺</p>
             <div class="rating text-warning mb-2">
               <i class="bi bi-star-fill"></i>
@@ -184,7 +264,7 @@
               <i class="bi bi-star"></i>
               <span class="text-muted">(42)</span>
             </div>
-            <a href="product1.html" class="btn btn-primary w-100" data-i18n="product_btn">
+            <a href="product1.html" class="btn btn-primary w-100">
               <i class="bi bi-cart-plus"></i> Detayları Gör
             </a>
           </div>
@@ -202,8 +282,8 @@
             </div>
           </a>
           <div class="card-body text-center">
-            <h5 class="card-title" data-i18n="product2_title">Kahverengi Çapraz Çanta</h5>
-            <p class="card-text" data-i18n="product2_desc">Şık ve taşınabilir günlük çanta</p>
+            <h5 class="card-title">Kahverengi Çapraz Çanta</h5>
+            <p class="card-text">Şık ve taşınabilir günlük çanta</p>
             <p class="text-primary fw-bold">339.99₺</p>
             <div class="rating text-warning mb-2">
               <i class="bi bi-star-fill"></i>
@@ -213,7 +293,7 @@
               <i class="bi bi-star"></i>
               <span class="text-muted">(42)</span>
             </div>
-            <a href="product2.html" class="btn btn-primary w-100" data-i18n="product_btn">
+            <a href="product2.html" class="btn btn-primary w-100">
               <i class="bi bi-cart-plus"></i> Detayları Gör
             </a>
           </div>
@@ -231,8 +311,8 @@
             </div>
           </a>
           <div class="card-body text-center">
-            <h5 class="card-title" data-i18n="product3_title">Kırmızı Cüzdan</h5>
-            <p class="card-text" data-i18n="product3_desc">Telefon bölmeli, zarif tasarım</p>
+            <h5 class="card-title">Kırmızı Cüzdan</h5>
+            <p class="card-text">Telefon bölmeli, zarif tasarım</p>
             <p class="text-primary fw-bold">288.99₺</p>
             <div class="rating text-warning mb-2">
               <i class="bi bi-star-fill"></i>
@@ -242,7 +322,7 @@
               <i class="bi bi-star"></i>
               <span class="text-muted">(42)</span>
             </div>
-            <a href="product3.html" class="btn btn-primary w-100" data-i18n="product_btn">
+            <a href="product3.html" class="btn btn-primary w-100">
               <i class="bi bi-cart-plus"></i> Detayları Gör
             </a>
           </div>
@@ -301,8 +381,7 @@
 
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-4">
-  <p class="mb-0" data-i18n="footer_rights">© 2025 ToptanX | Tüm Hakları Saklıdır.</p>
-  <p>WhatsApp: +90 5xx xxx xx xx</p>
+  <p class="mb-0">© 2025 ToptanX | Tüm Hakları Saklıdır.</p>
 </footer>
 
 <script>
@@ -335,6 +414,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
-<script src="js/lang.js"></script>
 </body>
 </html>
